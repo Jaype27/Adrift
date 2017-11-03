@@ -6,7 +6,7 @@ public class PlayerControl : MonoBehaviour {
 
 	public float m_movement = 0f;
 	public float m_jump = 0f;
-	private bool m_isGround = false;
+	private bool m_isWater = false;
 	private bool m_stoppedJumping = true;	
 	private Rigidbody m_rb;
 
@@ -27,13 +27,13 @@ public class PlayerControl : MonoBehaviour {
 			gameObject.transform.position = pos;
 		}
 
-		if(Input.GetButtonDown("Jump") && m_isGround) {
-			m_isGround = false;
+		if(Input.GetButtonDown("Jump") && m_isWater) {
+			m_isWater = false;
 			m_stoppedJumping = false;
 			GetComponent<Rigidbody>().velocity = new Vector3(0, m_jump);
 		}
 		
-		if(Input.GetButtonDown("Jump") && m_isGround) {
+		if(Input.GetButtonDown("Jump") && !m_stoppedJumping) {
 			if(m_rb.velocity.y > 0) {
 				Vector3 velocity = m_rb.velocity;
 				velocity.y = 0;
@@ -43,9 +43,16 @@ public class PlayerControl : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter (Collision other) {
-		if(other.gameObject.tag == "Ground") {
-			m_isGround = true;
+	void OnTriggerEnter (Collider other) {
+		if(other.gameObject.tag == "Water") {
+			m_isWater = true;
+			
+		}
+	}
+	void OnCollisionEnter (Collision other2) {
+		if(other2.gameObject.tag == "Sand") {
+			m_isWater = true;
+			
 		}
 	}
 }
