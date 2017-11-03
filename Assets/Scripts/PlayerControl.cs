@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour {
 
+	public float m_movement = 0f;
+	public float m_jump = 0f;
+	private bool m_isGround = false;
+	private bool m_stoppedJumping = true;	
+	private Rigidbody m_rb;
+
+	
+	
+	
 	// Use this for initialization
 	void Start () {
 		
@@ -12,5 +21,31 @@ public class PlayerControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+		if(Input.GetAxis("Horizontal") != 0) {
+			Vector3 pos = gameObject.transform.position;
+			pos.x += Input.GetAxis("Horizontal") * m_movement * Time.deltaTime;
+			gameObject.transform.position = pos;
+		}
+
+		if(Input.GetButtonDown("Jump") && m_isGround) {
+			m_isGround = false;
+			m_stoppedJumping = false;
+			GetComponent<Rigidbody>().velocity = new Vector3(0, m_jump);
+		}
+		
+		if(Input.GetButtonDown("Jump") && m_isGround) {
+			if(m_rb.velocity.y > 0) {
+				Vector3 velocity = m_rb.velocity;
+				velocity.y = 0;
+				m_rb.velocity = velocity;
+			}
+			m_stoppedJumping = true;
+		}
+	}
+
+	void OnCollisionEnter (Collision other) {
+		if(other.gameObject.tag == "Ground") {
+			m_isGround = true;
+		}
 	}
 }
