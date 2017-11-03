@@ -7,11 +7,13 @@ public class PlayerControl : MonoBehaviour {
 	public float m_movement = 0f;
 	public float m_jump = 0f;
 	private bool m_isWater = false;
-	private bool m_stoppedJumping = true;	
+//	private bool m_stoppedJumping = true;	
 	private Rigidbody m_rb;
 
 	
-	
+	void Awake () {
+		m_rb = gameObject.GetComponent<Rigidbody>();
+	}
 	
 	// Use this for initialization
 	void Start () {
@@ -29,28 +31,29 @@ public class PlayerControl : MonoBehaviour {
 
 		if(Input.GetButtonDown("Jump") && m_isWater) {
 			m_isWater = false;
-			m_stoppedJumping = false;
-			GetComponent<Rigidbody>().velocity = new Vector3(0, m_jump);
+			// m_stoppedJumping = false;
+			m_rb.AddForce(Vector3.up * m_jump, ForceMode.Impulse);
+			// GetComponent<Rigidbody>().velocity = new Vector3(0, m_jump);
 		}
 		
-		if(Input.GetButtonDown("Jump") && !m_stoppedJumping) {
+		/*if(Input.GetButtonDown("Jump") && !m_stoppedJumping) {
 			if(m_rb.velocity.y > 0) {
 				Vector3 velocity = m_rb.velocity;
 				velocity.y = 0;
 				m_rb.velocity = velocity;
 			}
 			m_stoppedJumping = true;
-		}
+		}*/
 	}
 
-	void OnTriggerEnter (Collider other) {
+	void OnTriggerStay (Collider other) {
 		if(other.gameObject.tag == "Water") {
 			m_isWater = true;
 			
 		}
 	}
 	void OnCollisionEnter (Collision other2) {
-		if(other2.gameObject.tag == "Sand") {
+		if(other2.gameObject.tag == "FloorBed") {
 			m_isWater = true;
 			
 		}
