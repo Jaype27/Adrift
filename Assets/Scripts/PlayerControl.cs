@@ -9,6 +9,7 @@ public class PlayerControl : MonoBehaviour {
 	private bool m_isWater = false;
 //	private bool m_stoppedJumping = true;	
 	private Rigidbody m_rb;
+	// private GameManager gm;
 
 	
 	void Awake () {
@@ -17,7 +18,7 @@ public class PlayerControl : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		
+		// gm = GetComponent<GameManager>();
 	}
 	
 	// Update is called once per frame
@@ -52,10 +53,16 @@ public class PlayerControl : MonoBehaviour {
 			
 		}
 	}
-	void OnCollisionEnter (Collision other2) {
-		if(other2.gameObject.tag == "FloorBed") {
+	void OnCollisionEnter (Collision other) {
+		if(other.gameObject.tag == "FloorBed") {
 			m_isWater = true;
-			
 		}
 	}
+
+	/*void OnTriggerEnter (Collider other) {
+		if(other.gameObject.tag == "Fish") {
+			gm.m_score += 100;
+			Destroy(other.gameObject);
+		}
+	}*/
 }
