@@ -48,4 +48,8 @@ public class GameManager : MonoBehaviour {
 	public static void AddPoints (float pointsToAdd) {
 		m_score += pointsToAdd;
 	}
+
+	public void Retry () {
+
+	}
 }
