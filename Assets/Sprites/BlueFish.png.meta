@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 2c3b01e4231d8c847be878eaf3a1ca4c
-timeCreated: 1509748425
+guid: 2c8f178bd70bbdc49b864e339becbc65
+timeCreated: 1510008853
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -88,18 +88,14 @@ TextureImporter:
       name: BlueFish_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 31
+        width: 30
         height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -15.5, y: 10}
-        - {x: -15.5, y: -10}
-        - {x: 15.5, y: -10}
-        - {x: 15.5, y: 10}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
@@ -111,13 +107,9 @@ TextureImporter:
         width: 30
         height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -15, y: 10}
-        - {x: -15, y: -10}
-        - {x: 15, y: -10}
-        - {x: 15, y: 10}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     outline: []
