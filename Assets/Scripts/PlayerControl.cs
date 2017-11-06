@@ -1,14 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviour {
 
 	public float m_movement = 0f;
 	public float m_jump = 0f;
+	public Slider oxygenMeter;
+	public float m_maxOxygen = 20f;
+	private float m_currentOxygen = 20f;
+	// private bool m_isSubmerged = false;
 	private bool m_isWater = false;
 //	private bool m_stoppedJumping = true;	
 	private Rigidbody m_rb;
+	// private GameManager gm;
 
 	
 	void Awake () {
@@ -17,7 +23,8 @@ public class PlayerControl : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		
+		m_currentOxygen = m_maxOxygen;
+		// gm = GetComponent<GameManager>();
 	}
 	
 	// Update is called once per frame
@@ -35,6 +42,15 @@ public class PlayerControl : MonoBehaviour {
 			m_rb.AddForce(Vector3.up * m_jump, ForceMode.Impulse);
 			// GetComponent<Rigidbody>().velocity = new Vector3(0, m_jump);
 		}
+
+		if(!m_isWater) {
+			m_currentOxygen += Time.deltaTime;
+			if(m_currentOxygen >= m_maxOxygen) {
+				m_currentOxygen = m_maxOxygen;
+			}
+			oxygenMeter.value = m_currentOxygen/m_maxOxygen;
+		}
+		m_isWater = false;
 		
 		/*if(Input.GetButtonDown("Jump") && !m_stoppedJumping) {
 			if(m_rb.velocity.y > 0) {
@@ -49,13 +65,20 @@ public class PlayerControl : MonoBehaviour {
 	void OnTriggerStay (Collider other) {
 		if(other.gameObject.tag == "Water") {
 			m_isWater = true;
-			
+			m_currentOxygen -= Time.deltaTime;
+			oxygenMeter.value = m_currentOxygen/m_maxOxygen;
 		}
 	}
-	void OnCollisionEnter (Collision other2) {
-		if(other2.gameObject.tag == "FloorBed") {
+	void OnCollisionEnter (Collision other) {
+		if(other.gameObject.tag == "FloorBed") {
 			m_isWater = true;
-			
 		}
 	}
+
+	/*void OnTriggerEnter (Collider other) {
+		if(other.gameObject.tag == "Fish") {
+			gm.m_score += 100;
+			Destroy(other.gameObject);
+		}
+	}*/
 }
