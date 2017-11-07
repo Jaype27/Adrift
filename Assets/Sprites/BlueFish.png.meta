@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 2c8f178bd70bbdc49b864e339becbc65
-timeCreated: 1510008853
+guid: 43d18da58d035974da469012e79e1df1
+timeCreated: 1510016699
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -42,7 +42,7 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 0
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
@@ -88,10 +88,10 @@ TextureImporter:
       name: BlueFish_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 30
-        height: 20
+        width: 32
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -102,10 +102,10 @@ TextureImporter:
       name: BlueFish_1
       rect:
         serializedVersion: 2
-        x: 31
+        x: 32
         y: 0
-        width: 30
-        height: 20
+        width: 32
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
