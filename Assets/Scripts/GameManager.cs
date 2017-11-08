@@ -32,8 +32,10 @@ public class GameManager : MonoBehaviour {
 		
 		m_score = 0f;
 		m_highscore = 0f;
-		m_lives = 3f;
-		
+		m_lives = 2f;
+
+
+		// TODO: Uncomment in the end
 		// m_highscore = PlayerPrefs.GetFloat("Highscore");
 		
 	}

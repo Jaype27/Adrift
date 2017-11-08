@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4322087288695762}
   - component: {fileID: 212476596886095148}
   - component: {fileID: 95894334274770256}
+  - component: {fileID: 65273681805855884}
+  - component: {fileID: 114536398925538258}
   m_Layer: 0
   m_Name: BubbleFish_0
   m_TagString: Untagged
@@ -35,12 +37,24 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1996310550874176}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.27, y: 4.838407, z: -1.0683746}
+  m_LocalPosition: {x: -5.248724, y: -3.529548, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65273681805855884
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1996310550874176}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.46, y: 0.3, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95894334274770256
 Animator:
   serializedVersion: 3
@@ -58,6 +72,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114536398925538258
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1996310550874176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 535605d1ee5d63d40aa971ad9f5c8585, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsToAdd: 200
+  addOxygen: 5
 --- !u!212 &212476596886095148
 SpriteRenderer:
   m_ObjectHideFlags: 1

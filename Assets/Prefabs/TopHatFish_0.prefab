@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4955406186384884}
   - component: {fileID: 212223976169366566}
   - component: {fileID: 95287453164990848}
+  - component: {fileID: 65965498122350448}
+  - component: {fileID: 114571809041694494}
   m_Layer: 0
   m_Name: TopHatFish_0
   m_TagString: Untagged
@@ -35,12 +37,24 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1738699204769394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.41, y: 4.806505, z: -1.1052065}
+  m_LocalPosition: {x: 8.41, y: -3.89, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65965498122350448
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1738699204769394}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.21, y: 0.26, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95287453164990848
 Animator:
   serializedVersion: 3
@@ -58,6 +72,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114571809041694494
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1738699204769394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 535605d1ee5d63d40aa971ad9f5c8585, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsToAdd: 500
+  addOxygen: 0
+  numLife: 1
 --- !u!212 &212223976169366566
 SpriteRenderer:
   m_ObjectHideFlags: 1

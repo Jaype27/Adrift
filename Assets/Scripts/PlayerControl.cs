@@ -11,7 +11,7 @@ public class PlayerControl : MonoBehaviour {
 	public float m_maxOxygen = 20f;
 	public GameObject m_oxygenUI;
 
-	private float m_currentOxygen = 20f;
+	public float m_currentOxygen = 20f;
 	private bool m_isWater = false;
 //	private bool m_stoppedJumping = true;	
 	private Rigidbody m_rb;
