@@ -9,6 +9,8 @@ TagManager:
   - Sand
   - FloorBed
   - Fish
+  - GameManager
+  - Resource
   layers:
   - Default
   - TransparentFX

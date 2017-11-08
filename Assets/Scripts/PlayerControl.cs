@@ -9,6 +9,8 @@ public class PlayerControl : MonoBehaviour {
 	public float m_jump = 0f;
 	public Slider oxygenMeter;
 	public float m_maxOxygen = 20f;
+	public GameObject m_oxygenUI;
+
 	private float m_currentOxygen = 20f;
 	private bool m_isWater = false;
 //	private bool m_stoppedJumping = true;	
@@ -44,6 +46,7 @@ public class PlayerControl : MonoBehaviour {
 
 		if(!m_isWater) {
 			m_currentOxygen += Time.deltaTime;
+			m_oxygenUI.SetActive(false);
 			if(m_currentOxygen >= m_maxOxygen) {
 				m_currentOxygen = m_maxOxygen;
 			}
@@ -64,6 +67,7 @@ public class PlayerControl : MonoBehaviour {
 	void OnTriggerStay (Collider other) {
 		if(other.gameObject.tag == "Water") {
 			m_isWater = true;
+			m_oxygenUI.SetActive(true);
 			m_currentOxygen -= Time.deltaTime;
 			oxygenMeter.value = m_currentOxygen/m_maxOxygen;
 		}
@@ -72,7 +76,17 @@ public class PlayerControl : MonoBehaviour {
 		if(other.gameObject.tag == "FloorBed") {
 			m_isWater = true;
 		}
+
+		/*if(other.gameObject.tag == "Wood") {
+			other.transform.parent = transform;
+		}*/
 	}
+
+	/*void OnCollisionExit (Collision other) {
+		if(other.gameObject.tag == "Wood") {
+			other.transform.parent = null;
+		}	
+	}*/
 
 	/*void OnTriggerEnter (Collider other) {
 		if(other.gameObject.tag == "Fish") {
