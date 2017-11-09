@@ -11,6 +11,9 @@ TagManager:
   - Fish
   - GameManager
   - Resource
+  - Win
+  - Wood
+  - Rope
   layers:
   - Default
   - TransparentFX
