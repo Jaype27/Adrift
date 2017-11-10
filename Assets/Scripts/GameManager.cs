@@ -11,9 +11,10 @@ public class GameManager : MonoBehaviour {
 	public Text m_scoreUIText;
 	public Text m_livesUIText;
 	public Text m_highscoreUIText;
+	public Text m_gameoverUIText;
 
-	public PlayerControl player;
-	public Transform spawn;
+	public Transform thePlayer;
+	public Transform spawnPoint;
 
 	public static GameManager Instance { get { return m_instance; } }
 	private static GameManager m_instance = null;
@@ -45,6 +46,7 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		
 		m_scoreUIText.text = "Score: " + m_score;
 		m_highscoreUIText.text = "Highscore: " + m_highscore;
 		m_livesUIText.text = "Lives: " + m_lives;
@@ -54,7 +56,20 @@ public class GameManager : MonoBehaviour {
 		m_score += pointsToAdd;
 	}
 
-	public void Retry () {
+	public void PlayerDeath (PlayerControl player) {
+		Destroy (player.gameObject);
+	}
+	
+	public void Respawn () {
 		
+		StartCoroutine(Retry());
+
+	}
+	public IEnumerator Retry () {
+		
+		yield return new WaitForSeconds(2f);
+		Instantiate (thePlayer, spawnPoint.position, spawnPoint.rotation);
+		m_lives--;
+
 	}
 }
