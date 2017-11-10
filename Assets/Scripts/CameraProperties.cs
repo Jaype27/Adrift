@@ -16,13 +16,19 @@ public class CameraProperties : MonoBehaviour {
 	public float XmaxValue = 0;
 	public bool XminBool = false;
 	public float XminValue = 0;
+	float nextTimeSearch = 0;
 	
+	void Update () {
+
+	}
 	
-	// Update is called once per frame
 	void FixedUpdate () {
+		
+		if(m_player == null)
+		return;
+		
 		Vector3 playerPos = m_player.position;
 
-		
 		if (YminBool && YmaxBool) 
 			playerPos.y = Mathf.Clamp(m_player.position.y, YminValue, YmaxValue);
 		
@@ -41,16 +47,20 @@ public class CameraProperties : MonoBehaviour {
 
 		else if (XmaxBool) 
 			playerPos.x = Mathf.Clamp(m_player.position.x, m_player.position.x, XmaxValue);
-
-		
-		
 		
 		playerPos.z = transform.position.z;
 
 		transform.position = Vector3.SmoothDamp(transform.position, playerPos, ref velocity, smoothTime);
 
-
-		
-
 	}
+
+	void FindPlayer () {
+		if(nextTimeSearch <= Time.time) {
+			GameObject searchResult = GameObject.FindGameObjectWithTag ("Player");
+			if(searchResult != null) 
+				m_player = searchResult.transform;
+			nextTimeSearch = Time.time + 1;
+		}
+	}
+
 }

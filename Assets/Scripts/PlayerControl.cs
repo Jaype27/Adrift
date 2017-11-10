@@ -11,21 +11,22 @@ public class PlayerControl : MonoBehaviour {
 	public float m_maxOxygen = 20f;
 	public GameObject m_oxygenUI;
 	public float m_currentOxygen = 20f;
-	private bool m_isWater = false;
-//	private bool m_stoppedJumping = true;	
+	
+	private bool m_isWater = false;	
 	private Rigidbody m_rb;
-	// private GameManager gm;
+	private GameManager gm;
 	private float itemsCollected;
 	
 	void Awake () {
 		m_rb = gameObject.GetComponent<Rigidbody>();
+		gm = FindObjectOfType<GameManager>();
 	}
 	
 	// Use this for initialization
 	void Start () {
 		m_currentOxygen = m_maxOxygen;
 		
-		// gm = GetComponent<GameManager>();
+		
 	}
 	
 	// Update is called once per frame
@@ -39,7 +40,6 @@ public class PlayerControl : MonoBehaviour {
 
 		if(Input.GetButtonDown("Jump") && m_isWater) {
 			m_isWater = false;
-			// m_stoppedJumping = false;
 			m_rb.AddForce(Vector3.up * m_jump, ForceMode.Impulse);
 			// GetComponent<Rigidbody>().velocity = new Vector3(0, m_jump);
 		}
@@ -62,7 +62,16 @@ public class PlayerControl : MonoBehaviour {
 			m_currentOxygen -= Time.deltaTime;
 			oxygenMeter.value = m_currentOxygen/m_maxOxygen;
 		}
+
+		if(m_currentOxygen <= 0) {
+			gm.PlayerDeath(this);
+			Debug.Log("Player Killed");
+
+			gm.Respawn();
+			Debug.Log("Player Spawn");
+		}
 	}
+	
 	void OnCollisionEnter (Collision other) {
 		if(other.gameObject.tag == "FloorBed") {
 			m_isWater = true;
@@ -78,6 +87,14 @@ public class PlayerControl : MonoBehaviour {
 			Destroy (other.gameObject);
 			itemsCollected++;
 			Debug.Log(itemsCollected);
+		}
+		
+		if(other.gameObject.tag == "KillZone") {
+			gm.PlayerDeath(this);
+			Debug.Log("Player Killed");
+
+			gm.Respawn();
+			Debug.Log("Player Spawn");
 		}
 	}
 
