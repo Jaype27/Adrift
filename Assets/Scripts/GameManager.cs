@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour {
 	public Text m_livesUIText;
 	public Text m_highscoreUIText;
 
+	public PlayerControl player;
+	public Transform spawn;
+
 	public static GameManager Instance { get { return m_instance; } }
 	private static GameManager m_instance = null;
 
@@ -32,8 +35,10 @@ public class GameManager : MonoBehaviour {
 		
 		m_score = 0f;
 		m_highscore = 0f;
-		m_lives = 3f;
-		
+		m_lives = 2f;
+
+
+// TODO: Uncomment in the end
 		// m_highscore = PlayerPrefs.GetFloat("Highscore");
 		
 	}
@@ -50,6 +55,6 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void Retry () {
-
+		
 	}
 }

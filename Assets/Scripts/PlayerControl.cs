@@ -9,12 +9,13 @@ public class PlayerControl : MonoBehaviour {
 	public float m_jump = 0f;
 	public Slider oxygenMeter;
 	public float m_maxOxygen = 20f;
-	private float m_currentOxygen = 20f;
+	public GameObject m_oxygenUI;
+	public float m_currentOxygen = 20f;
 	private bool m_isWater = false;
 //	private bool m_stoppedJumping = true;	
 	private Rigidbody m_rb;
 	// private GameManager gm;
-
+	private float itemsCollected;
 	
 	void Awake () {
 		m_rb = gameObject.GetComponent<Rigidbody>();
@@ -23,6 +24,7 @@ public class PlayerControl : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		m_currentOxygen = m_maxOxygen;
+		
 		// gm = GetComponent<GameManager>();
 	}
 	
@@ -44,26 +46,19 @@ public class PlayerControl : MonoBehaviour {
 
 		if(!m_isWater) {
 			m_currentOxygen += Time.deltaTime;
+			m_oxygenUI.SetActive(false);
 			if(m_currentOxygen >= m_maxOxygen) {
 				m_currentOxygen = m_maxOxygen;
 			}
 			oxygenMeter.value = m_currentOxygen/m_maxOxygen;
 		}
 		m_isWater = false;
-		
-		/*if(Input.GetButtonDown("Jump") && !m_stoppedJumping) {
-			if(m_rb.velocity.y > 0) {
-				Vector3 velocity = m_rb.velocity;
-				velocity.y = 0;
-				m_rb.velocity = velocity;
-			}
-			m_stoppedJumping = true;
-		}*/
 	}
 
 	void OnTriggerStay (Collider other) {
 		if(other.gameObject.tag == "Water") {
 			m_isWater = true;
+			m_oxygenUI.SetActive(true);
 			m_currentOxygen -= Time.deltaTime;
 			oxygenMeter.value = m_currentOxygen/m_maxOxygen;
 		}
@@ -72,12 +67,24 @@ public class PlayerControl : MonoBehaviour {
 		if(other.gameObject.tag == "FloorBed") {
 			m_isWater = true;
 		}
+
+		if(other.gameObject.tag == "Wood") {
+			Destroy (other.gameObject);
+			itemsCollected++;
+			Debug.Log(itemsCollected);
+		}
+
+		if(other.gameObject.tag == "Rope") {
+			Destroy (other.gameObject);
+			itemsCollected++;
+			Debug.Log(itemsCollected);
+		}
 	}
 
-	/*void OnTriggerEnter (Collider other) {
-		if(other.gameObject.tag == "Fish") {
-			gm.m_score += 100;
-			Destroy(other.gameObject);
+	void OnTriggerEnter (Collider other) {
+		if(other.gameObject.tag == "Win" && itemsCollected == 5) {
+			Debug.Log("You Win");
+			Time.timeScale = 0.5f;
 		}
-	}*/
+	}
 }
