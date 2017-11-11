@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
+
+public class Boundary {
+	public float xMin, xMax, yMin, yMax;
+}
+
 public class PlayerControl : MonoBehaviour {
 
 	public float m_movement = 0f;
