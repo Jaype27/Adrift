@@ -24,6 +24,7 @@ public class CameraProperties : MonoBehaviour {
 	
 	void FixedUpdate () {
 		
+		
 		if(m_player == null)
 		return;
 		
