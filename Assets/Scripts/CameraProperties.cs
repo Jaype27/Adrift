@@ -16,7 +16,7 @@ public class CameraProperties : MonoBehaviour {
 	public float XmaxValue = 0;
 	public bool XminBool = false;
 	public float XminValue = 0;
-	float nextTimeSearch = 0;
+//	float nextTimeSearch = 0;
 	
 	void Update () {
 
@@ -24,7 +24,10 @@ public class CameraProperties : MonoBehaviour {
 	
 	void FixedUpdate () {
 		
-		
+		if(GameObject.Find("WarioWalk_0(Clone)") != null) {
+			m_player = GameObject.Find("WarioWalk_0(Clone)").transform;
+		}
+
 		if(m_player == null)
 		return;
 		
@@ -55,13 +58,13 @@ public class CameraProperties : MonoBehaviour {
 
 	}
 
-	void FindPlayer () {
+	/*void FindPlayer () {
 		if(nextTimeSearch <= Time.time) {
 			GameObject searchResult = GameObject.FindGameObjectWithTag ("Player");
 			if(searchResult != null) 
 				m_player = searchResult.transform;
 			nextTimeSearch = Time.time + 1;
 		}
-	}
+	}*/
 
 }

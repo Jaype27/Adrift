@@ -17,7 +17,6 @@ public class PlayerControl : MonoBehaviour {
 	public float m_maxOxygen = 20f;
 	public GameObject m_oxygenUI;
 	public float m_currentOxygen = 20f;
-	
 	private bool m_isWater = false;	
 	private Rigidbody m_rb;
 	private GameManager gm;
@@ -28,11 +27,10 @@ public class PlayerControl : MonoBehaviour {
 		gm = FindObjectOfType<GameManager>();
 	}
 	
-	// Use this for initialization
+	
 	void Start () {
 		m_currentOxygen = m_maxOxygen;
-		
-		
+		oxygenMeter = GetComponent<Slider>();
 	}
 	
 	// Update is called once per frame
@@ -56,7 +54,7 @@ public class PlayerControl : MonoBehaviour {
 			if(m_currentOxygen >= m_maxOxygen) {
 				m_currentOxygen = m_maxOxygen;
 			}
-			oxygenMeter.value = m_currentOxygen/m_maxOxygen;
+			oxygenMeter.value = m_currentOxygen;
 		}
 		m_isWater = false;
 	}
@@ -66,7 +64,7 @@ public class PlayerControl : MonoBehaviour {
 			m_isWater = true;
 			m_oxygenUI.SetActive(true);
 			m_currentOxygen -= Time.deltaTime;
-			oxygenMeter.value = m_currentOxygen/m_maxOxygen;
+			oxygenMeter.value = m_currentOxygen;
 		}
 
 		if(m_currentOxygen <= 0) {
