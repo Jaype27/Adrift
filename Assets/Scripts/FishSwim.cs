@@ -25,7 +25,7 @@ public class FishSwim : MonoBehaviour {
 		yield return new WaitForSeconds (Random.Range (m_startWait.x, m_startWait.y));
 
 		while (true) {
-			m_targetManeuver = Random.Range (1, m_dodge) * -Mathf.Sign(transform.position.x);
+			m_targetManeuver = Random.Range (1, m_dodge); //* -Mathf.Sign(transform.position.x);
 			yield return new WaitForSeconds (Random.Range (m_maneuverTime.x, m_maneuverTime.y));
 			m_targetManeuver = 0;
 			yield return new WaitForSeconds (Random.Range (m_maneuverWait.x, m_maneuverWait.y));
@@ -33,11 +33,11 @@ public class FishSwim : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-		float m_newManeuver = Mathf.MoveTowards (m_rb.velocity.x, m_targetManeuver, Time.deltaTime * m_smoothing);
-		m_rb.velocity = new Vector3 (m_newManeuver, 0.0f, m_currentSpeed);
+		float m_newManeuver = Mathf.MoveTowards (m_targetManeuver, Time.deltaTime * m_smoothing, m_rb.velocity.x);
+		m_rb.velocity = new Vector3 (m_currentSpeed, m_newManeuver, 0.0f);
 		m_rb.position = new Vector3 (
 			Mathf.Clamp (m_rb.position.x, m_boundary.xMin, m_boundary.xMax),
-			Mathf.Clamp (m_rb.position.z, m_boundary.yMin, m_boundary.yMax),
+			Mathf.Clamp (m_rb.position.y, m_boundary.yMin, m_boundary.yMax),
 			0.0f
 		);
 	}
