@@ -16,7 +16,6 @@ public class CameraProperties : MonoBehaviour {
 	public float XmaxValue = 0;
 	public bool XminBool = false;
 	public float XminValue = 0;
-//	float nextTimeSearch = 0;
 	
 	void Update () {
 
@@ -57,14 +56,4 @@ public class CameraProperties : MonoBehaviour {
 		transform.position = Vector3.SmoothDamp(transform.position, playerPos, ref velocity, smoothTime);
 
 	}
-
-	/*void FindPlayer () {
-		if(nextTimeSearch <= Time.time) {
-			GameObject searchResult = GameObject.FindGameObjectWithTag ("Player");
-			if(searchResult != null) 
-				m_player = searchResult.transform;
-			nextTimeSearch = Time.time + 1;
-		}
-	}*/
-
 }

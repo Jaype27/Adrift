@@ -20,7 +20,8 @@ public class PlayerControl : MonoBehaviour {
 	private bool m_isWater = false;	
 	private Rigidbody m_rb;
 	private GameManager gm;
-	private float itemsCollected;
+	private float ropeCollected;
+	private float woodCollected;
 	
 	void Awake () {
 		m_rb = gameObject.GetComponent<Rigidbody>();
@@ -30,7 +31,6 @@ public class PlayerControl : MonoBehaviour {
 	
 	void Start () {
 		m_currentOxygen = m_maxOxygen;
-		oxygenMeter = GetComponent<Slider>();
 	}
 	
 	// Update is called once per frame
@@ -54,7 +54,7 @@ public class PlayerControl : MonoBehaviour {
 			if(m_currentOxygen >= m_maxOxygen) {
 				m_currentOxygen = m_maxOxygen;
 			}
-			oxygenMeter.value = m_currentOxygen;
+			oxygenMeter.value = m_currentOxygen/m_maxOxygen;
 		}
 		m_isWater = false;
 	}
@@ -64,7 +64,7 @@ public class PlayerControl : MonoBehaviour {
 			m_isWater = true;
 			m_oxygenUI.SetActive(true);
 			m_currentOxygen -= Time.deltaTime;
-			oxygenMeter.value = m_currentOxygen;
+			oxygenMeter.value = m_currentOxygen/m_maxOxygen;
 		}
 
 		if(m_currentOxygen <= 0) {
@@ -83,29 +83,40 @@ public class PlayerControl : MonoBehaviour {
 
 		if(other.gameObject.tag == "Wood") {
 			Destroy (other.gameObject);
-			itemsCollected++;
-			Debug.Log(itemsCollected);
+			woodCollected++;
+			Debug.Log(woodCollected);
 		}
 
 		if(other.gameObject.tag == "Rope") {
 			Destroy (other.gameObject);
-			itemsCollected++;
-			Debug.Log(itemsCollected);
+			ropeCollected++;
+			Debug.Log(ropeCollected);
 		}
 		
 		if(other.gameObject.tag == "KillZone") {
 			gm.PlayerDeath(this);
 			Debug.Log("Player Killed");
 
+	//TODO: RESTART ITEMS TO THEIR SPAWN POINTS
+
+			woodCollected = 0;
+			ropeCollected = 0;
+			Debug.Log("Lost Items");
+
+			m_currentOxygen = m_maxOxygen;
+			Debug.Log("Oxygen Refilled");
+			
 			gm.Respawn();
 			Debug.Log("Player Spawn");
 		}
 	}
 
 	void OnTriggerEnter (Collider other) {
-		if(other.gameObject.tag == "Win" && itemsCollected == 5) {
+		if(other.gameObject.tag == "Win" && ropeCollected == 2 && woodCollected == 3) {
 			Debug.Log("You Win");
 			Time.timeScale = 0.5f;
 		}
 	}
+
+	//TODO: REMOVEDEBUG.LOGS IN THE END
 }
