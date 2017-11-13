@@ -125,5 +125,5 @@ public class PlayerControl : MonoBehaviour {
 		}
 	}
 
-	//TODO: REMOVEDEBUG.LOGS IN THE END
+	//TODO: REMOVE DEBUG.LOGS IN THE END
 }
