@@ -71,6 +71,13 @@ public class PlayerControl : MonoBehaviour {
 			gm.PlayerDeath(this);
 			Debug.Log("Player Killed");
 
+			woodCollected = 0;
+			ropeCollected = 0;
+			Debug.Log("Lost Items");
+
+			m_currentOxygen = m_maxOxygen;
+			Debug.Log("Oxygen Refilled");
+
 			gm.Respawn();
 			Debug.Log("Player Spawn");
 		}
