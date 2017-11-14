@@ -9,4 +9,12 @@ public class EnemyBehaviour : MonoBehaviour {
 		m_rb = GetComponent<Rigidbody>();
 		m_rb.velocity = transform.right * m_speed;
 	}
+
+	void OnCollisionEnter (Collision other) {
+		if(other.gameObject.tag == "Boundary") {
+			m_rb.velocity = transform.right * -m_speed;
+		} else {
+			m_rb.velocity = transform.right * m_speed;
+		}
+	}
 }

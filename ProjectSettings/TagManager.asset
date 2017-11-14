@@ -15,6 +15,7 @@ TagManager:
   - Wood
   - Rope
   - KillZone
+  - Boundary
   layers:
   - Default
   - TransparentFX

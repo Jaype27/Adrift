@@ -19,8 +19,8 @@ public class GameManager : MonoBehaviour {
 	public Text m_highscoreUIText;
 	public Text m_gameoverUIText;
 
-	public Transform thePlayer;
-	public Transform spawnPoint;
+	public PlayerControl thePlayer;
+	public GameObject spawnPoint;
 
 	public static GameManager Instance { get { return m_instance; } }
 	private static GameManager m_instance = null;
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour {
 		m_lives = 2f;
 
 
-// TODO: Uncomment in the end
+// TODO: UNCOMMENT IN THE END
 		// m_highscore = PlayerPrefs.GetFloat("Highscore");
 		
 	}
@@ -63,7 +63,8 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void PlayerDeath (PlayerControl player) {
-		Destroy (player.gameObject);
+		thePlayer.gameObject.SetActive(false);
+		//Destroy (player.gameObject);
 	}
 	
 	public void Respawn () {
@@ -73,9 +74,18 @@ public class GameManager : MonoBehaviour {
 	}
 	public IEnumerator Retry () {
 		
-		yield return new WaitForSeconds(2f);
-		Instantiate (thePlayer, spawnPoint.position, spawnPoint.rotation);
-		m_lives--;
+		if(m_lives >= 1) {
+			yield return new WaitForSeconds(2f);
+			thePlayer.transform.position = spawnPoint.transform.position;
+			// Instantiate (thePlayer, spawnPoint.position, spawnPoint.rotation);
+			thePlayer.gameObject.SetActive(true);
+			m_lives--;
+		} else if(m_lives <= 1) {
+			thePlayer.gameObject.SetActive(false);
+			Debug.Log("Game Over");
+			
+		}
+			
 
 	}
 

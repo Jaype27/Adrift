@@ -17,22 +17,20 @@ public class PlayerControl : MonoBehaviour {
 	public float m_maxOxygen = 20f;
 	public GameObject m_oxygenUI;
 	public float m_currentOxygen = 20f;
-	
 	private bool m_isWater = false;	
 	private Rigidbody m_rb;
 	private GameManager gm;
-	private float itemsCollected;
+	private float ropeCollected;
+	private float woodCollected;
 	
 	void Awake () {
 		m_rb = gameObject.GetComponent<Rigidbody>();
 		gm = FindObjectOfType<GameManager>();
 	}
 	
-	// Use this for initialization
+	
 	void Start () {
 		m_currentOxygen = m_maxOxygen;
-		
-		
 	}
 	
 	// Update is called once per frame
@@ -73,6 +71,13 @@ public class PlayerControl : MonoBehaviour {
 			gm.PlayerDeath(this);
 			Debug.Log("Player Killed");
 
+			woodCollected = 0;
+			ropeCollected = 0;
+			Debug.Log("Lost Items");
+
+			m_currentOxygen = m_maxOxygen;
+			Debug.Log("Oxygen Refilled");
+
 			gm.Respawn();
 			Debug.Log("Player Spawn");
 		}
@@ -85,29 +90,40 @@ public class PlayerControl : MonoBehaviour {
 
 		if(other.gameObject.tag == "Wood") {
 			Destroy (other.gameObject);
-			itemsCollected++;
-			Debug.Log(itemsCollected);
+			woodCollected++;
+			Debug.Log(woodCollected);
 		}
 
 		if(other.gameObject.tag == "Rope") {
 			Destroy (other.gameObject);
-			itemsCollected++;
-			Debug.Log(itemsCollected);
+			ropeCollected++;
+			Debug.Log(ropeCollected);
 		}
 		
 		if(other.gameObject.tag == "KillZone") {
 			gm.PlayerDeath(this);
 			Debug.Log("Player Killed");
 
+	//TODO: RESTART ITEMS TO THEIR SPAWN POINTS
+
+			woodCollected = 0;
+			ropeCollected = 0;
+			Debug.Log("Lost Items");
+
+			m_currentOxygen = m_maxOxygen;
+			Debug.Log("Oxygen Refilled");
+			
 			gm.Respawn();
 			Debug.Log("Player Spawn");
 		}
 	}
 
 	void OnTriggerEnter (Collider other) {
-		if(other.gameObject.tag == "Win" && itemsCollected == 5) {
+		if(other.gameObject.tag == "Win" && ropeCollected == 2 && woodCollected == 3) {
 			Debug.Log("You Win");
 			Time.timeScale = 0.5f;
 		}
 	}
+
+	//TODO: REMOVE DEBUG.LOGS IN THE END
 }
