@@ -134,6 +134,7 @@ public class PlayerControl : MonoBehaviour {
 		if(other.gameObject.tag == "Win" && ropeCollected == 2 && woodCollected == 3) {
 			this.gameObject.SetActive(false);
 			winSprite.gameObject.SetActive(true);
+			winSprite.transform.Translate(Vector3.right * Time.deltaTime);
 		//	Debug.Log("You Win");
 		//	Time.timeScale = 0.5f;
 		}

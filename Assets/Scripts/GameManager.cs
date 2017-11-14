@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour {
 	public PlayerControl thePlayer;
 	public GameObject spawnPoint;
 
+	public GameObject[] itemList;
+	public GameObject[] itemSpawn;
+
 	public static GameManager Instance { get { return m_instance; } }
 	private static GameManager m_instance = null;
 
@@ -78,6 +81,7 @@ public class GameManager : MonoBehaviour {
 			yield return new WaitForSeconds(2f);
 			thePlayer.transform.position = spawnPoint.transform.position;
 			thePlayer.gameObject.SetActive(true);
+			// itemList.transform.position = itemSpawn.transform.position;
 			m_lives--;
 		} else if(m_lives <= 1) {
 			thePlayer.gameObject.SetActive(false);
