@@ -18,6 +18,7 @@ public class PlayerControl : MonoBehaviour {
 	public GameObject m_oxygenUI;
 	public float m_currentOxygen = 20f;
 	private bool m_isWater = false;	
+	Animator anim;
 	private Rigidbody m_rb;
 	private GameManager gm;
 	private float ropeCollected;
@@ -31,6 +32,8 @@ public class PlayerControl : MonoBehaviour {
 	
 	void Start () {
 		m_currentOxygen = m_maxOxygen;
+
+		anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -40,12 +43,17 @@ public class PlayerControl : MonoBehaviour {
 			Vector3 pos = gameObject.transform.position;
 			pos.x += Input.GetAxis("Horizontal") * m_movement * Time.deltaTime;
 			gameObject.transform.position = pos;
+
+			float move = Input.GetAxis ("Horizontal");
+			anim.SetFloat("Speed", move);
 		}
 
 		if(Input.GetButtonDown("Jump") && m_isWater) {
 			m_isWater = false;
 			m_rb.AddForce(Vector3.up * m_jump, ForceMode.Impulse);
 			// GetComponent<Rigidbody>().velocity = new Vector3(0, m_jump);
+
+			
 		}
 
 		if(!m_isWater) {
@@ -65,6 +73,9 @@ public class PlayerControl : MonoBehaviour {
 			m_oxygenUI.SetActive(true);
 			m_currentOxygen -= Time.deltaTime;
 			oxygenMeter.value = m_currentOxygen/m_maxOxygen;
+			
+			bool inWater = m_isWater;
+			anim.SetBool("IntheWater", m_isWater);
 		}
 
 		if(m_currentOxygen <= 0) {
