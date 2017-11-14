@@ -17,6 +17,7 @@ public class PlayerControl : MonoBehaviour {
 	public float m_maxOxygen = 20f;
 	public GameObject m_oxygenUI;
 	public float m_currentOxygen = 20f;
+	public GameObject winSprite;
 	private bool m_isWater = false;	
 	Animator anim;
 	private Rigidbody m_rb;
@@ -75,7 +76,7 @@ public class PlayerControl : MonoBehaviour {
 			oxygenMeter.value = m_currentOxygen/m_maxOxygen;
 			
 			bool inWater = m_isWater;
-			anim.SetBool("IntheWater", m_isWater);
+			anim.SetBool("IntheWater", inWater);
 		}
 
 		if(m_currentOxygen <= 0) {
@@ -131,8 +132,10 @@ public class PlayerControl : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other) {
 		if(other.gameObject.tag == "Win" && ropeCollected == 2 && woodCollected == 3) {
-			Debug.Log("You Win");
-			Time.timeScale = 0.5f;
+			this.gameObject.SetActive(false);
+			winSprite.gameObject.SetActive(true);
+		//	Debug.Log("You Win");
+		//	Time.timeScale = 0.5f;
 		}
 	}
 
