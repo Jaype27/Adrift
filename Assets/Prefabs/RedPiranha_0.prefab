@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 212993503489013632}
   - component: {fileID: 95265590126629540}
   - component: {fileID: 65320123018416070}
+  - component: {fileID: 54366934965552162}
   - component: {fileID: 114059858294366240}
   - component: {fileID: 114802239299693582}
-  - component: {fileID: 54366934965552162}
   m_Layer: 0
   m_Name: RedPiranha_0
   m_TagString: Untagged

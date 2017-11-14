@@ -22,10 +22,13 @@ GameObject:
   - component: {fileID: 212476596886095148}
   - component: {fileID: 95894334274770256}
   - component: {fileID: 65273681805855884}
+  - component: {fileID: 54020286619432788}
   - component: {fileID: 114536398925538258}
+  - component: {fileID: 114561955055918476}
+  - component: {fileID: 114887979597018084}
   m_Layer: 0
   m_Name: BubbleFish_0
-  m_TagString: Untagged
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,6 +46,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &54020286619432788
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1996310550874176}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 120
+  m_CollisionDetection: 2
 --- !u!65 &65273681805855884
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -86,6 +104,39 @@ MonoBehaviour:
   pointsToAdd: 400
   addOxygen: 5
   numLife: 0
+--- !u!114 &114561955055918476
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1996310550874176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8402d0876b0bd344a178906bef7c5ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_speed: -3
+--- !u!114 &114887979597018084
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1996310550874176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ff3fdc7eb151954c9efc665fe9f4cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_dodge: 0
+  m_smoothing: 7.5
+  m_startWait: {x: 0.5, y: 1}
+  m_maneuverTime: {x: 1, y: 2}
+  m_maneuverWait: {x: 1, y: 2}
+  m_boundary:
+    xMin: -22.5
+    xMax: 21.7
+    yMin: -10.8
+    yMax: -1
 --- !u!212 &212476596886095148
 SpriteRenderer:
   m_ObjectHideFlags: 1

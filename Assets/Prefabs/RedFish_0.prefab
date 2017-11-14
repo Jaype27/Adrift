@@ -21,14 +21,14 @@ GameObject:
   - component: {fileID: 4996581675344654}
   - component: {fileID: 212480715283597344}
   - component: {fileID: 95448961015287734}
-  - component: {fileID: 54539455332167058}
   - component: {fileID: 136094799689265830}
+  - component: {fileID: 54539455332167058}
   - component: {fileID: 114799149374464876}
   - component: {fileID: 114206372135341998}
   - component: {fileID: 114128156414227194}
   m_Layer: 0
   m_Name: RedFish_0
-  m_TagString: Untagged
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,7 +60,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 120
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!95 &95448961015287734
 Animator:
   serializedVersion: 3
@@ -90,15 +90,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_dodge: 0
-  m_smoothing: 5
-  m_startWait: {x: 0.5, y: 0.75}
-  m_maneuverTime: {x: 1, y: 1.5}
-  m_maneuverWait: {x: 1, y: 1.5}
+  m_smoothing: 7.5
+  m_startWait: {x: 0.5, y: 1}
+  m_maneuverTime: {x: 1, y: 2}
+  m_maneuverWait: {x: 1, y: 2}
   m_boundary:
-    xMin: -24
-    xMax: 24
+    xMin: -22.5
+    xMax: 21.7
     yMin: -10.8
-    yMax: 2
+    yMax: -1
 --- !u!114 &114206372135341998
 MonoBehaviour:
   m_ObjectHideFlags: 1
