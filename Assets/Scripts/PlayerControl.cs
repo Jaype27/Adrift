@@ -111,7 +111,15 @@ public class PlayerControl : MonoBehaviour {
 			ropeCollected++;
 			Debug.Log(ropeCollected);
 		}
-		
+	}
+
+	void OnTriggerEnter (Collider other) {
+		if(other.gameObject.tag == "Win" && ropeCollected == 2 && woodCollected == 3) {
+			this.gameObject.SetActive(false);
+			winSprite.gameObject.SetActive(true);
+			winSprite.transform.Translate(Vector3.right * Time.deltaTime);
+		}
+
 		if(other.gameObject.tag == "KillZone") {
 			gm.PlayerDeath(this);
 			Debug.Log("Player Killed");
@@ -127,16 +135,6 @@ public class PlayerControl : MonoBehaviour {
 			
 			gm.Respawn();
 			Debug.Log("Player Spawn");
-		}
-	}
-
-	void OnTriggerEnter (Collider other) {
-		if(other.gameObject.tag == "Win" && ropeCollected == 2 && woodCollected == 3) {
-			this.gameObject.SetActive(false);
-			winSprite.gameObject.SetActive(true);
-			winSprite.transform.Translate(Vector3.right * Time.deltaTime);
-		//	Debug.Log("You Win");
-		//	Time.timeScale = 0.5f;
 		}
 	}
 

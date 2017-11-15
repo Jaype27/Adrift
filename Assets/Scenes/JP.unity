@@ -1269,7 +1269,7 @@ Prefab:
     - target: {fileID: 65320123018416070, guid: 6446099d596d37a47b9a117d02a20582,
         type: 2}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1874265062209872, guid: 6446099d596d37a47b9a117d02a20582, type: 2}
       propertyPath: m_TagString
@@ -1987,7 +1987,7 @@ Prefab:
     - target: {fileID: 136895938760958234, guid: c2598a20ff617204094e486e76c34bf1,
         type: 2}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 54462070882174542, guid: c2598a20ff617204094e486e76c34bf1,
         type: 2}
@@ -2047,6 +2047,11 @@ Prefab:
     - target: {fileID: 1547819703319910, guid: c2598a20ff617204094e486e76c34bf1, type: 2}
       propertyPath: m_TagString
       value: KillZone
+      objectReference: {fileID: 0}
+    - target: {fileID: 212674378669885146, guid: c2598a20ff617204094e486e76c34bf1,
+        type: 2}
+      propertyPath: m_FlipX
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2598a20ff617204094e486e76c34bf1, type: 2}
@@ -3458,7 +3463,7 @@ Prefab:
     - target: {fileID: 65320123018416070, guid: 6446099d596d37a47b9a117d02a20582,
         type: 2}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1874265062209872, guid: 6446099d596d37a47b9a117d02a20582, type: 2}
       propertyPath: m_TagString
