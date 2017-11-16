@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114802239299693582}
   m_Layer: 0
   m_Name: RedPiranha_0
-  m_TagString: Untagged
+  m_TagString: KillZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1874265062209872}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.1104064, y: -5.0666704, z: 0}
+  m_LocalPosition: {x: 6.1104064, y: -2.67, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -67,11 +67,11 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1874265062209872}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.22, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.24684617, y: 0.18526876, z: 0.2}
+  m_Center: {x: 0.00022270283, y: -0.0050021214, z: 0}
 --- !u!95 &95265590126629540
 Animator:
   serializedVersion: 3
@@ -100,14 +100,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8402d0876b0bd344a178906bef7c5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: -3
+  m_speed: -10
 --- !u!114 &114802239299693582
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1874265062209872}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ff3fdc7eb151954c9efc665fe9f4cbb, type: 3}
   m_Name: 
