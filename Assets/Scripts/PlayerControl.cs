@@ -126,8 +126,6 @@ public class PlayerControl : MonoBehaviour {
 			gm.PlayerDeath(this);
 			Debug.Log("Player Killed");
 
-	//TODO: RESTART ITEMS TO THEIR SPAWN POINTS
-
 			woodCollected = 0;
 			ropeCollected = 0;
 			Debug.Log("Lost Items");

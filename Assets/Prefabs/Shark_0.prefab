@@ -25,9 +25,9 @@ GameObject:
   - component: {fileID: 54462070882174542}
   - component: {fileID: 114155300632865170}
   - component: {fileID: 114807254215236864}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Shark_0
-  m_TagString: Untagged
+  m_TagString: KillZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4882779758541576}
   - component: {fileID: 136662577101528492}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: KillZone
   m_TagString: KillZone
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1547819703319910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.03, y: -2.56, z: 0}
+  m_LocalPosition: {x: -11.75, y: -5.71, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 4882779758541576}
@@ -69,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1598205954312326}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.619, y: 0, z: 0}
+  m_LocalPosition: {x: 9.85, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4796834136830512}
@@ -88,7 +88,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 120
+  m_Constraints: 124
   m_CollisionDetection: 0
 --- !u!95 &95339134049237952
 Animator:
@@ -118,14 +118,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8402d0876b0bd344a178906bef7c5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: -3
+  m_speed: 7
 --- !u!114 &114807254215236864
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1547819703319910}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ff3fdc7eb151954c9efc665fe9f4cbb, type: 3}
   m_Name: 
@@ -147,7 +147,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1598205954312326}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.15413618
   m_Height: 0.5454365
