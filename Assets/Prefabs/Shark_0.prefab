@@ -152,7 +152,7 @@ CapsuleCollider:
   m_Radius: 0.15413618
   m_Height: 0.5454365
   m_Direction: 0
-  m_Center: {x: 0.04940921, y: -0.06917286, z: 0}
+  m_Center: {x: -10.43, y: -0.06917286, z: 0}
 --- !u!136 &136895938760958234
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -198,7 +198,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2d2e0bbfd849d3045ad5e832882169cf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 27d5d24ae5b86de4eba6a29303b35871, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

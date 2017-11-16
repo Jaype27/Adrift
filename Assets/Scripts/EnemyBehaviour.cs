@@ -21,5 +21,11 @@ public class EnemyBehaviour : MonoBehaviour {
 		} else {
 			//m_rb.velocity = transform.right * m_speed;
 		}
+		if(other.gameObject.tag == "BoundaryTwo") {
+			m_rb.velocity = transform.right * m_speed;
+			m_spriteRender.flipX = false;
+		} else {
+			//m_rb.velocity = transform.right * m_speed;
+		}
 	}
 }
