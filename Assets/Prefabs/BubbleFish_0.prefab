@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114536398925538258}
   - component: {fileID: 114561955055918476}
   - component: {fileID: 114887979597018084}
+  - component: {fileID: 114162519366796858}
   m_Layer: 0
   m_Name: BubbleFish_0
   m_TagString: Fish
@@ -68,7 +69,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1996310550874176}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.46, y: 0.3, z: 0.2}
@@ -90,6 +91,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114162519366796858
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1996310550874176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18289675b0ce64d4d9de89ff55286dbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114536398925538258
 MonoBehaviour:
   m_ObjectHideFlags: 1

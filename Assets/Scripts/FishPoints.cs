@@ -28,10 +28,6 @@ public class FishPoints : MonoBehaviour {
 			Destroy(gameObject);
 		}
 
-		if(other.gameObject.tag == "Boundary") {
-			Destroy(this.gameObject);
-		}
-
 		if (addLives.m_lives < 3) {
 			addLives.m_lives = addLives.m_lives + numLife;
 			Destroy(gameObject);

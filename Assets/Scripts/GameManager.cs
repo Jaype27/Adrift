@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour {
 		m_score = 0f;
 		m_highscore = 0f;
 		m_lives = 2f;
-
+		Respawn();
 		StartCoroutine(SpawnWaves());
 
 // TODO: UNCOMMENT IN THE END
@@ -81,7 +81,22 @@ public class GameManager : MonoBehaviour {
 			yield return new WaitForSeconds(2f);
 			thePlayer.transform.position = spawnPoint.transform.position;
 			thePlayer.gameObject.SetActive(true);
-			// itemList.transform.position = itemSpawn.transform.position;
+			
+			itemList[0].transform.position = itemSpawn[0].transform.position;
+			itemList[0].gameObject.SetActive(true);
+			
+			itemList[1].transform.position = itemSpawn[1].transform.position;
+			itemList[1].gameObject.SetActive(true);
+			
+			itemList[2].transform.position = itemSpawn[2].transform.position;
+			itemList[2].gameObject.SetActive(true);
+			
+			itemList[3].transform.position = itemSpawn[3].transform.position;
+			itemList[3].gameObject.SetActive(true);
+			
+			itemList[4].transform.position = itemSpawn[4].transform.position;
+			itemList[4].gameObject.SetActive(true);
+			
 			m_lives--;
 		} else if(m_lives <= 1) {
 			thePlayer.gameObject.SetActive(false);

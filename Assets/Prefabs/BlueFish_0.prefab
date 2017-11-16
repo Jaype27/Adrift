@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114845863409660012}
   - component: {fileID: 114122388523191394}
   - component: {fileID: 114187448632250212}
+  - component: {fileID: 114594841051088330}
   m_Layer: 0
   m_Name: BlueFish_0
   m_TagString: Fish
@@ -68,7 +69,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1979973064382648}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.22, z: 0.2}
@@ -123,6 +124,17 @@ MonoBehaviour:
     xMax: 21.7
     yMin: -10.8
     yMax: -1
+--- !u!114 &114594841051088330
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1979973064382648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18289675b0ce64d4d9de89ff55286dbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114845863409660012
 MonoBehaviour:
   m_ObjectHideFlags: 1

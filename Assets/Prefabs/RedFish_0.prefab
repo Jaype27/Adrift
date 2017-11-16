@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114799149374464876}
   - component: {fileID: 114206372135341998}
   - component: {fileID: 114128156414227194}
+  - component: {fileID: 114866266740243256}
   m_Layer: 0
   m_Name: RedFish_0
   m_TagString: Fish
@@ -125,6 +126,17 @@ MonoBehaviour:
   pointsToAdd: 400
   addOxygen: 0
   numLife: 0
+--- !u!114 &114866266740243256
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1389935810716610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18289675b0ce64d4d9de89ff55286dbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &136094799689265830
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -132,7 +144,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1389935810716610}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12142738
   m_Height: 0.4698628
