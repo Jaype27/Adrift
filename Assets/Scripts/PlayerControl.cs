@@ -24,6 +24,8 @@ public class PlayerControl : MonoBehaviour {
 	private GameManager gm;
 	private float ropeCollected;
 	private float woodCollected;
+	public AudioSource[] actionSounds;
+
 	
 	void Awake () {
 		m_rb = gameObject.GetComponent<Rigidbody>();
