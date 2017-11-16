@@ -107,7 +107,7 @@ public class PlayerControl : MonoBehaviour {
 		}
 
 		if(other.gameObject.tag == "Rope") {
-			Destroy (other.gameObject);
+			other.gameObject.SetActive(false);
 			ropeCollected++;
 			Debug.Log(ropeCollected);
 		}

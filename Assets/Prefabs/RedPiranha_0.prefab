@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 54366934965552162}
   - component: {fileID: 114059858294366240}
   - component: {fileID: 114802239299693582}
+  - component: {fileID: 114588280460695096}
   m_Layer: 0
   m_Name: RedPiranha_0
   m_TagString: Untagged
@@ -101,6 +102,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_speed: -3
+--- !u!114 &114588280460695096
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1874265062209872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18289675b0ce64d4d9de89ff55286dbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114802239299693582
 MonoBehaviour:
   m_ObjectHideFlags: 1

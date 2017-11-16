@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114170029557033942}
   - component: {fileID: 114036609497951594}
   - component: {fileID: 114487127170485810}
+  - component: {fileID: 114650338000628142}
   m_Layer: 0
   m_Name: CatFish_0
   m_TagString: Fish
@@ -137,6 +138,17 @@ MonoBehaviour:
     xMax: 21.7
     yMin: -10.8
     yMax: -1
+--- !u!114 &114650338000628142
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1397932590602790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18289675b0ce64d4d9de89ff55286dbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212752738935125532
 SpriteRenderer:
   m_ObjectHideFlags: 1

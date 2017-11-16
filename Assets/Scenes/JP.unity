@@ -177,6 +177,20 @@ Prefab:
       propertyPath: winSprite
       value: 
       objectReference: {fileID: 1153260204}
+    - target: {fileID: 1975074419694374, guid: f41a8db504ca47c4687680c11d7a7192, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 114119728011724328, guid: f41a8db504ca47c4687680c11d7a7192,
+        type: 2}
+      propertyPath: woodSprite
+      value: 
+      objectReference: {fileID: 1121202978}
+    - target: {fileID: 114119728011724328, guid: f41a8db504ca47c4687680c11d7a7192,
+        type: 2}
+      propertyPath: ropeSprite
+      value: 
+      objectReference: {fileID: 919722791}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f41a8db504ca47c4687680c11d7a7192, type: 2}
   m_IsPrefabParent: 0
@@ -2056,6 +2070,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2598a20ff617204094e486e76c34bf1, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &919722791 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1982419951766456, guid: 24f5a5364a433ee489c4f1ab0bfb8718,
+    type: 2}
+  m_PrefabInternal: {fileID: 1484787830}
 --- !u!1 &930784257
 GameObject:
   m_ObjectHideFlags: 0
@@ -2526,6 +2545,11 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'Lives:'
+--- !u!1 &1121202978 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1026018987732048, guid: f5e980165480a0047babfdd269f462c3,
+    type: 2}
+  m_PrefabInternal: {fileID: 533547463}
 --- !u!1 &1153260204
 GameObject:
   m_ObjectHideFlags: 0
