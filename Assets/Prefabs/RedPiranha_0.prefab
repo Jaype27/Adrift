@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 54366934965552162}
   - component: {fileID: 114059858294366240}
   - component: {fileID: 114802239299693582}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RedPiranha_0
   m_TagString: KillZone
   m_Icon: {fileID: 0}

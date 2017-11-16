@@ -278,6 +278,20 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -2057,75 +2071,6 @@ Prefab:
     - target: {fileID: 4796834136830512, guid: c2598a20ff617204094e486e76c34bf1, type: 2}
       propertyPath: m_RootOrder
       value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 136895938760958234, guid: c2598a20ff617204094e486e76c34bf1,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 54462070882174542, guid: c2598a20ff617204094e486e76c34bf1,
-        type: 2}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114807254215236864, guid: c2598a20ff617204094e486e76c34bf1,
-        type: 2}
-      propertyPath: m_dodge
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 54462070882174542, guid: c2598a20ff617204094e486e76c34bf1,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 124
-      objectReference: {fileID: 0}
-    - target: {fileID: 54462070882174542, guid: c2598a20ff617204094e486e76c34bf1,
-        type: 2}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 54462070882174542, guid: c2598a20ff617204094e486e76c34bf1,
-        type: 2}
-      propertyPath: m_Interpolate
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 136895938760958234, guid: c2598a20ff617204094e486e76c34bf1,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 136662577101528492, guid: c2598a20ff617204094e486e76c34bf1,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114155300632865170, guid: c2598a20ff617204094e486e76c34bf1,
-        type: 2}
-      propertyPath: m_speed
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 114155300632865170, guid: c2598a20ff617204094e486e76c34bf1,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114807254215236864, guid: c2598a20ff617204094e486e76c34bf1,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 136662577101528492, guid: c2598a20ff617204094e486e76c34bf1,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1547819703319910, guid: c2598a20ff617204094e486e76c34bf1, type: 2}
-      propertyPath: m_TagString
-      value: KillZone
-      objectReference: {fileID: 0}
-    - target: {fileID: 212674378669885146, guid: c2598a20ff617204094e486e76c34bf1,
-        type: 2}
-      propertyPath: m_FlipX
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2598a20ff617204094e486e76c34bf1, type: 2}

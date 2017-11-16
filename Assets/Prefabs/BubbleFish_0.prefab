@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114561955055918476}
   - component: {fileID: 114887979597018084}
   - component: {fileID: 114162519366796858}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BubbleFish_0
   m_TagString: Fish
   m_Icon: {fileID: 0}

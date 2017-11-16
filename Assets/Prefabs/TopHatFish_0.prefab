@@ -27,9 +27,9 @@ GameObject:
   - component: {fileID: 114359548067204028}
   - component: {fileID: 114474172932977450}
   - component: {fileID: 114720789626564432}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TopHatFish_0
-  m_TagString: Boundary
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
