@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8402d0876b0bd344a178906bef7c5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: -6
+  m_speed: -10
 --- !u!114 &114474172932977450
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -116,9 +116,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_dodge: 0
   m_smoothing: 7.5
-  m_startWait: {x: 0.5, y: 1}
-  m_maneuverTime: {x: 2, y: 3}
-  m_maneuverWait: {x: 2, y: 3}
+  m_startWait: {x: 0.25, y: 0.5}
+  m_maneuverTime: {x: 0.25, y: 0.5}
+  m_maneuverWait: {x: 0.25, y: 0.5}
   m_boundary:
     xMin: -22.5
     xMax: 21.7
