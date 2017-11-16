@@ -101,7 +101,7 @@ public class PlayerControl : MonoBehaviour {
 		}
 
 		if(other.gameObject.tag == "Wood") {
-			Destroy (other.gameObject);
+			other.gameObject.SetActive(false);
 			woodCollected++;
 			Debug.Log(woodCollected);
 		}
