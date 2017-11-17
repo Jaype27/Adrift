@@ -43,14 +43,12 @@ public class GameManager : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		if(PlayerPrefs.HasKey("Highscore")){
-
-		m_highscore = PlayerPrefs.GetFloat("Highscore");
-
-		}
+		
 		m_score = 0f;
 		m_highscore = 0f;
 		m_lives = 3f;
+
+		m_highscore = PlayerPrefs.GetFloat("Highscore");
 
 		StartCoroutine(FirstSpawn());
 		StartCoroutine(SpawnWaves());
@@ -60,7 +58,7 @@ public class GameManager : MonoBehaviour {
 		
 		if (m_score > m_highscore) {
 			m_highscore = m_score;
-			PlayerPrefs.SetFloat("HighScore", m_highscore);
+			PlayerPrefs.SetFloat("Highscore", m_highscore);
 		}
 		m_scoreUIText.text = "Score: " + (int)Mathf.Floor(m_score);
 		m_highscoreUIText.text = "Highscore: " + Mathf.Floor(m_highscore);
@@ -138,21 +136,11 @@ public class GameManager : MonoBehaviour {
 
 			thePlayer.m_currentOxygen = thePlayer.m_maxOxygen;
 			
-			// m_lives--;
 		} else if(m_lives <= 0) {
 			
 			gameOver.gameObject.SetActive(true);
 			
 			StartCoroutine(FirstSpawn());
-			// m_lives = 3;
-
-			// thePlayer.transform.position = spawnPoint.transform.position;
-			// thePlayer.gameObject.SetActive(true);
-
-			//yield return new WaitForSeconds(1f);
-			//thePlayer.gameObject.SetActive(false);
-
-			
 		}		
 	}
 	
@@ -168,5 +156,9 @@ public class GameManager : MonoBehaviour {
 			}
 			yield return new WaitForSeconds (m_waveWait);
 		}
+	}
+
+	public int GetScore () {
+		return (int)Mathf.Floor(m_score);
 	}
 }
