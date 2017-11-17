@@ -54,14 +54,11 @@ public class PlayerControl : MonoBehaviour {
 		if(Input.GetButtonDown("Jump") && m_isWater) {
 			m_isWater = false;
 			m_rb.AddForce(Vector3.up * m_jump, ForceMode.Impulse);
-			// GetComponent<Rigidbody>().velocity = new Vector3(0, m_jump);
-
-			
+			actionSounds[2].Play();
 		}
 
 		if(!m_isWater) {
 			m_currentOxygen += Time.deltaTime;
-			m_oxygenUI.SetActive(false);
 			if(m_currentOxygen >= m_maxOxygen) {
 				m_currentOxygen = m_maxOxygen;
 			}
@@ -73,7 +70,6 @@ public class PlayerControl : MonoBehaviour {
 	void OnTriggerStay (Collider other) {
 		if(other.gameObject.tag == "Water") {
 			m_isWater = true;
-			m_oxygenUI.SetActive(true);
 			m_currentOxygen -= Time.deltaTime;
 			oxygenMeter.value = m_currentOxygen/m_maxOxygen;
 			
@@ -83,6 +79,7 @@ public class PlayerControl : MonoBehaviour {
 
 		if(m_currentOxygen <= 0) {
 			gm.PlayerDeath(this);
+			actionSounds[0].Play();
 			Debug.Log("Player Killed");
 
 			woodCollected = 0;
@@ -104,12 +101,14 @@ public class PlayerControl : MonoBehaviour {
 
 		if(other.gameObject.tag == "Wood") {
 			other.gameObject.SetActive(false);
+			actionSounds[1].Play();
 			woodCollected++;
 			Debug.Log(woodCollected);
 		}
 
 		if(other.gameObject.tag == "Rope") {
 			other.gameObject.SetActive(false);
+			actionSounds[1].Play();
 			ropeCollected++;
 			Debug.Log(ropeCollected);
 		}
@@ -124,6 +123,7 @@ public class PlayerControl : MonoBehaviour {
 
 		if(other.gameObject.tag == "KillZone") {
 			gm.PlayerDeath(this);
+			actionSounds[0].Play();
 			Debug.Log("Player Killed");
 
 			woodCollected = 0;
