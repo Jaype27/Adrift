@@ -24,13 +24,14 @@ GameObject:
   - component: {fileID: 54341139958021926}
   - component: {fileID: 65479228055733774}
   - component: {fileID: 114119728011724328}
+  - component: {fileID: 65388716497492530}
   m_Layer: 0
   m_Name: WarioIdle_0
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4999311211599824
 Transform:
   m_ObjectHideFlags: 1
@@ -38,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1975074419694374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6596125, y: 1.1083136, z: 0}
+  m_LocalPosition: {x: -0.32, y: 1.67, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -59,7 +60,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!65 &65479228055733774
+--- !u!65 &65388716497492530
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -69,8 +70,20 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.24, y: 0.27, z: 0.2}
+  m_Size: {x: 0.2, y: 0.29, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65479228055733774
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1975074419694374}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.24, y: 0.2898048, z: 0.2}
+  m_Center: {x: 0, y: 0.000000011920929, z: 0}
 --- !u!95 &95273937626241246
 Animator:
   serializedVersion: 3
@@ -102,9 +115,14 @@ MonoBehaviour:
   m_movement: 5
   m_jump: 5
   oxygenMeter: {fileID: 0}
-  m_maxOxygen: 20
+  m_maxOxygen: 30
   m_oxygenUI: {fileID: 0}
-  m_currentOxygen: 20
+  m_currentOxygen: 30
+  winSprite: {fileID: 0}
+  actionSounds:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &212725573606500486
 SpriteRenderer:
   m_ObjectHideFlags: 1
