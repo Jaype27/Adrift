@@ -15,15 +15,15 @@ public class EnemyBehaviour : MonoBehaviour {
 	}
 
 	void OnTriggerEnter (Collider other) {
-		Debug.Log(gameObject.name+" collide with "+other.gameObject.name);
+		//Debug.Log(gameObject.name+" collide with "+other.gameObject.name);
 		if(other.gameObject.tag == "Boundary") {
-			Debug.Log("before vel:"+m_rb.velocity);
+		//	Debug.Log("before vel:"+m_rb.velocity);
 			m_rb.velocity = m_rb.velocity * -1;
 			m_spriteRender.flipX = !m_spriteRender.flipX;
-			Debug.Log("after vel:"+m_rb.velocity);
+		//	Debug.Log("after vel:"+m_rb.velocity);
 			
 		} else {
-			Debug.Log("else");
+		//	Debug.Log("else");
 			//m_spriteRender.flipX = false;
 			//m_rb.velocity = transform.right * m_speed;
 		}

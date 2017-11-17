@@ -79,6 +79,7 @@ public class PlayerControl : MonoBehaviour {
 
 		if(m_currentOxygen <= 0) {
 			gm.PlayerDeath(this);
+			gm.m_lives--;
 			actionSounds[0].Play();
 			Debug.Log("Player Killed");
 
@@ -123,6 +124,7 @@ public class PlayerControl : MonoBehaviour {
 
 		if(other.gameObject.tag == "KillZone") {
 			gm.PlayerDeath(this);
+			gm.m_lives--;
 			actionSounds[0].Play();
 			Debug.Log("Player Killed");
 

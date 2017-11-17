@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviour {
 			itemList[4].transform.position = itemSpawn[4].transform.position;
 			itemList[4].gameObject.SetActive(true);
 			
-			m_lives--;
+			// m_lives--;
 		} else if(m_lives <= 1) {
 			thePlayer.gameObject.SetActive(false);
 			Debug.Log("Game Over");
