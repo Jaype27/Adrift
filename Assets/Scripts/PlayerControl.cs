@@ -18,6 +18,7 @@ public class PlayerControl : MonoBehaviour {
 	public GameObject m_oxygenUI;
 	public float m_currentOxygen = 20f;
 	public GameObject winSprite;
+	public RaftMove theRaft;
 	private bool m_isWater = false;	
 	Animator anim;
 	private Rigidbody m_rb;
@@ -119,7 +120,9 @@ public class PlayerControl : MonoBehaviour {
 		if(other.gameObject.tag == "Win" && ropeCollected == 2 && woodCollected == 3) {
 			this.gameObject.SetActive(false);
 			winSprite.gameObject.SetActive(true);
-			winSprite.transform.Translate(Vector3.right * Time.deltaTime);
+			woodCollected = 0;
+			ropeCollected = 0;
+			theRaft.WinAnim();
 		}
 
 		if(other.gameObject.tag == "KillZone") {

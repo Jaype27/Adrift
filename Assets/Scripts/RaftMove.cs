@@ -8,12 +8,18 @@ public class RaftMove : MonoBehaviour {
 	public float m_speed;
 	public GameObject raftSprite;
 	public GameManager m_gm;
+	public GameObject winSpawn;
 	private Rigidbody m_rb;
 	
 	void Start () {
 		m_rb = GetComponent<Rigidbody>();
 		m_rb.velocity = transform.right * m_speed;
 
+		WinAnim();
+	}
+
+	public void WinAnim () {
+		raftSprite.transform.position = winSpawn.transform.position;
 		StartCoroutine(Disappear());
 	}
 
@@ -25,8 +31,6 @@ public class RaftMove : MonoBehaviour {
 	}
 
 	void OnBecameInvisible() {
-		//Scene Main = SceneManager.GetActiveScene ();
-     	SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
 		 m_gm.Respawn();
 		
 	}

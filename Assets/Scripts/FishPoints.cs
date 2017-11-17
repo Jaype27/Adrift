@@ -35,6 +35,8 @@ public class FishPoints : MonoBehaviour {
 			Destroy(gameObject);
 		}
 
+		playerOxygen.actionSounds[1].Play();
+
 	}
 
 

@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour {
 	public Text m_scoreUIText;
 	public Text m_livesUIText;
 	public Text m_highscoreUIText;
+	public GameObject gameOver;
 
 	public PlayerControl thePlayer;
 	public GameObject spawnPoint;
@@ -42,24 +43,33 @@ public class GameManager : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		
+		if(PlayerPrefs.HasKey("Highscore")){
+
+		m_highscore = PlayerPrefs.GetFloat("Highscore");
+
+		}
 		m_score = 0f;
 		m_highscore = 0f;
-		m_lives = 2f;
-		Respawn();
-		StartCoroutine(SpawnWaves());
+		m_lives = 3f;
 
-// TODO: UNCOMMENT IN THE END
-		// m_highscore = PlayerPrefs.GetFloat("Highscore");
-		
+		StartCoroutine(FirstSpawn());
+		StartCoroutine(SpawnWaves());
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		
-		m_scoreUIText.text = "Score: " + m_score;
-		m_highscoreUIText.text = "Highscore: " + m_highscore;
+		if (m_score > m_highscore) {
+			m_highscore = m_score;
+			PlayerPrefs.SetFloat("HighScore", m_highscore);
+		}
+		m_scoreUIText.text = "Score: " + (int)Mathf.Floor(m_score);
+		m_highscoreUIText.text = "Highscore: " + Mathf.Floor(m_highscore);
+
+
+	//	m_scoreUIText.text = "Score: " + m_score;
+	//	m_highscoreUIText.text = "Highscore: " + m_highscore;
 		m_livesUIText.text = "Lives: " + m_lives;
+		
 	}
 
 	public static void AddPoints (float pointsToAdd) {
@@ -73,8 +83,37 @@ public class GameManager : MonoBehaviour {
 	public void Respawn () {
 		
 		StartCoroutine(Retry());
+	}
+
+	public void StartGame () {
 
 	}
+	
+	public IEnumerator FirstSpawn () {
+		yield return new WaitForSeconds(1f);
+
+			m_score = 0;
+			m_lives = 3;
+
+			thePlayer.transform.position = spawnPoint.transform.position;
+			thePlayer.gameObject.SetActive(true);
+			
+			itemList[0].transform.position = itemSpawn[0].transform.position;
+			itemList[0].gameObject.SetActive(true);
+			
+			itemList[1].transform.position = itemSpawn[1].transform.position;
+			itemList[1].gameObject.SetActive(true);
+			
+			itemList[2].transform.position = itemSpawn[2].transform.position;
+			itemList[2].gameObject.SetActive(true);
+			
+			itemList[3].transform.position = itemSpawn[3].transform.position;
+			itemList[3].gameObject.SetActive(true);
+			
+			itemList[4].transform.position = itemSpawn[4].transform.position;
+			itemList[4].gameObject.SetActive(true);	
+	}
+
 	public IEnumerator Retry () {
 		
 		if(m_lives >= 1) {
@@ -96,11 +135,22 @@ public class GameManager : MonoBehaviour {
 			
 			itemList[4].transform.position = itemSpawn[4].transform.position;
 			itemList[4].gameObject.SetActive(true);
+
+			thePlayer.m_currentOxygen = thePlayer.m_maxOxygen;
 			
 			// m_lives--;
-		} else if(m_lives <= 1) {
-			thePlayer.gameObject.SetActive(false);
-			Debug.Log("Game Over");
+		} else if(m_lives <= 0) {
+			
+			StartCoroutine(FirstSpawn());
+			// m_lives = 3;
+
+			thePlayer.transform.position = spawnPoint.transform.position;
+			thePlayer.gameObject.SetActive(true);
+
+			//yield return new WaitForSeconds(1f);
+			//thePlayer.gameObject.SetActive(false);
+
+			gameOver.gameObject.SetActive(true);
 		}		
 	}
 	
