@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4318331565979676}
   - component: {fileID: 212221025603138800}
   - component: {fileID: 65115899119283642}
-  - component: {fileID: 114334454803732986}
   m_Layer: 9
   m_Name: Wood
   m_TagString: Wood
@@ -54,19 +53,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48, y: 0.16, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114334454803732986
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1026018987732048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 168d1edd3d422724aa76f2becfd6f98c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventory: 0
-  itemsCollected: 0
 --- !u!212 &212221025603138800
 SpriteRenderer:
   m_ObjectHideFlags: 1
