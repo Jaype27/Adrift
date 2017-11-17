@@ -141,16 +141,18 @@ public class GameManager : MonoBehaviour {
 			// m_lives--;
 		} else if(m_lives <= 0) {
 			
+			gameOver.gameObject.SetActive(true);
+			
 			StartCoroutine(FirstSpawn());
 			// m_lives = 3;
 
-			thePlayer.transform.position = spawnPoint.transform.position;
-			thePlayer.gameObject.SetActive(true);
+			// thePlayer.transform.position = spawnPoint.transform.position;
+			// thePlayer.gameObject.SetActive(true);
 
 			//yield return new WaitForSeconds(1f);
 			//thePlayer.gameObject.SetActive(false);
 
-			gameOver.gameObject.SetActive(true);
+			
 		}		
 	}
 	
