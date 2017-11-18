@@ -18,7 +18,6 @@ public class Inspect : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other) {
 		if(other.CompareTag("Resource")) {
-			Debug.Log("Found Item");
 			m_inspect = other.gameObject;
 			currentInspectObject = m_inspect.GetComponent<CollectItem>();
 		}
@@ -26,7 +25,6 @@ public class Inspect : MonoBehaviour {
 
 	void OnTriggerExit (Collider other) {
 		if(other.CompareTag("Resource")) {
-			Debug.Log("Away from Item");
 			m_inspect = null;
 		}
 	}

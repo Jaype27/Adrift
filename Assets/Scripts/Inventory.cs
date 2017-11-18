@@ -13,15 +13,15 @@ public class Inventory : MonoBehaviour {
 		for(int i = 0; i < inventory.Length; i++) {
 			if(inventory[i] == null) {
 				inventory[i] = item;
-				Debug.Log(item.name + " was collected");
 				itemAdded = true;
 				item.SendMessage ("Collect");
 				break;
 			}
 		}
-	if(!itemAdded) {
-		Debug.Log ("Inventory Full");
-	}
+
+		if(!itemAdded) {
+		
+		}
 
 	}
 }

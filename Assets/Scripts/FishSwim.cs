@@ -25,7 +25,7 @@ public class FishSwim : MonoBehaviour {
 		yield return new WaitForSeconds (Random.Range (m_startWait.x, m_startWait.y));
 
 		while (true) {
-			m_targetManeuver = Random.Range (1, m_dodge); //* -Mathf.Sign(transform.position.x);
+			m_targetManeuver = Random.Range (1, m_dodge);
 			yield return new WaitForSeconds (Random.Range (m_maneuverTime.x, m_maneuverTime.y));
 			m_targetManeuver = 0;
 			yield return new WaitForSeconds (Random.Range (m_maneuverWait.x, m_maneuverWait.y));
