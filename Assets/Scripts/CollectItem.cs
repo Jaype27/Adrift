@@ -9,8 +9,6 @@ public class CollectItem : MonoBehaviour {
 
 	public void Collect () {
 		gameObject.SetActive(false);
-		Debug.Log("Collected");
 		itemsCollected++;
-		Debug.Log(itemsCollected);
 	}
 }

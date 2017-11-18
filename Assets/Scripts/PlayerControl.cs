@@ -19,6 +19,7 @@ public class PlayerControl : MonoBehaviour {
 	public float m_currentOxygen = 20f;
 	public GameObject winSprite;
 	public RaftMove theRaft;
+	public float pointsToAdd;
 	private bool m_isWater = false;	
 	Animator anim;
 	private Rigidbody m_rb;
@@ -40,7 +41,6 @@ public class PlayerControl : MonoBehaviour {
 		anim = GetComponent<Animator>();
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		
 		if(Input.GetAxis("Horizontal") != 0) {
@@ -82,17 +82,12 @@ public class PlayerControl : MonoBehaviour {
 			gm.PlayerDeath(this);
 			gm.m_lives--;
 			actionSounds[0].Play();
-			Debug.Log("Player Killed");
 
 			woodCollected = 0;
 			ropeCollected = 0;
-			Debug.Log("Lost Items");
-
 			m_currentOxygen = m_maxOxygen;
-			Debug.Log("Oxygen Refilled");
 
 			gm.Respawn();
-			Debug.Log("Player Spawn");
 		}
 	}
 	
@@ -105,20 +100,19 @@ public class PlayerControl : MonoBehaviour {
 			other.gameObject.SetActive(false);
 			actionSounds[1].Play();
 			woodCollected++;
-			Debug.Log(woodCollected);
 		}
 
 		if(other.gameObject.tag == "Rope") {
 			other.gameObject.SetActive(false);
 			actionSounds[1].Play();
 			ropeCollected++;
-			Debug.Log(ropeCollected);
 		}
 	}
 
 	void OnTriggerEnter (Collider other) {
 		if(other.gameObject.tag == "Win" && ropeCollected == 2 && woodCollected == 3) {
 			this.gameObject.SetActive(false);
+			GameManager.AddPoints(pointsToAdd);
 			winSprite.gameObject.SetActive(true);
 			woodCollected = 0;
 			ropeCollected = 0;
@@ -126,22 +120,16 @@ public class PlayerControl : MonoBehaviour {
 		}
 
 		if(other.gameObject.tag == "KillZone") {
+			
 			gm.PlayerDeath(this);
 			gm.m_lives--;
 			actionSounds[0].Play();
-			Debug.Log("Player Killed");
 
 			woodCollected = 0;
 			ropeCollected = 0;
-			Debug.Log("Lost Items");
-
 			m_currentOxygen = m_maxOxygen;
-			Debug.Log("Oxygen Refilled");
-			
+
 			gm.Respawn();
-			Debug.Log("Player Spawn");
 		}
 	}
-
-	//TODO: REMOVE DEBUG.LOGS IN THE END
 }

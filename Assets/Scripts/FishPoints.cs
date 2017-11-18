@@ -15,7 +15,6 @@ public class FishPoints : MonoBehaviour {
 		addLives = FindObjectOfType<GameManager>();
 	}
 	
-	// Only player picks up the object
 	void OnTriggerEnter (Collider other) {
 		
 		if(other.GetComponent<PlayerControl>() == null)

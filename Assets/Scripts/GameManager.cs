@@ -40,8 +40,6 @@ public class GameManager : MonoBehaviour {
 		DontDestroyOnLoad(this.gameObject);
 	}
 	
-	
-	// Use this for initialization
 	void Start () {
 		
 		m_score = 0f;
@@ -60,12 +58,9 @@ public class GameManager : MonoBehaviour {
 			m_highscore = m_score;
 			PlayerPrefs.SetFloat("Highscore", m_highscore);
 		}
+	
 		m_scoreUIText.text = "Score: " + (int)Mathf.Floor(m_score);
 		m_highscoreUIText.text = "Highscore: " + Mathf.Floor(m_highscore);
-
-
-	//	m_scoreUIText.text = "Score: " + m_score;
-	//	m_highscoreUIText.text = "Highscore: " + m_highscore;
 		m_livesUIText.text = "Lives: " + m_lives;
 		
 	}
@@ -81,10 +76,6 @@ public class GameManager : MonoBehaviour {
 	public void Respawn () {
 		
 		StartCoroutine(Retry());
-	}
-
-	public void StartGame () {
-
 	}
 	
 	public IEnumerator FirstSpawn () {
@@ -147,7 +138,7 @@ public class GameManager : MonoBehaviour {
 	IEnumerator SpawnWaves () {
 		yield return new WaitForSeconds (m_startWait);
 		while (true) {
-			for (int i = 0; i < m_fishCount; i++) { // Stay in the loop as long as i is less than m_hazardCount; every time the loop cycles we incriment i by 1; executing SpawnWaves() loops this as many times as listed in m_hazardCount
+			for (int i = 0; i < m_fishCount; i++) {
 				GameObject m_fish = m_fishes [Random.Range (0,m_fishes.Length)];
 				Vector3 m_spawnPosition = new Vector3 (Random.Range (-m_spawnValues.x, m_spawnValues.x), m_spawnValues.y, m_spawnValues.z);
 				Quaternion m_spawnRotation = Quaternion.identity;
@@ -156,9 +147,5 @@ public class GameManager : MonoBehaviour {
 			}
 			yield return new WaitForSeconds (m_waveWait);
 		}
-	}
-
-	public int GetScore () {
-		return (int)Mathf.Floor(m_score);
 	}
 }

@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsToAdd: 400
-  addOxygen: 5
+  addOxygen: 10
   numLife: 0
 --- !u!114 &114561955055918476
 MonoBehaviour:

@@ -119,6 +119,8 @@ MonoBehaviour:
   m_oxygenUI: {fileID: 0}
   m_currentOxygen: 30
   winSprite: {fileID: 0}
+  theRaft: {fileID: 0}
+  victoryPoints: 5000
   actionSounds:
   - {fileID: 0}
   - {fileID: 0}

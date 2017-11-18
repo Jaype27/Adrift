@@ -164,6 +164,11 @@ Prefab:
       objectReference: {fileID: 1153260204}
     - target: {fileID: 114119728011724328, guid: f41a8db504ca47c4687680c11d7a7192,
         type: 2}
+      propertyPath: theRaft
+      value: 
+      objectReference: {fileID: 1153260207}
+    - target: {fileID: 114119728011724328, guid: f41a8db504ca47c4687680c11d7a7192,
+        type: 2}
       propertyPath: actionSounds.Array.data[0]
       value: 
       objectReference: {fileID: 1843899205}
@@ -179,13 +184,8 @@ Prefab:
       objectReference: {fileID: 2091606059}
     - target: {fileID: 114119728011724328, guid: f41a8db504ca47c4687680c11d7a7192,
         type: 2}
-      propertyPath: theRaft
-      value: 
-      objectReference: {fileID: 1153260207}
-    - target: {fileID: 95273937626241246, guid: f41a8db504ca47c4687680c11d7a7192,
-        type: 2}
-      propertyPath: m_ApplyRootMotion
-      value: 0
+      propertyPath: pointsToAdd
+      value: 5000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f41a8db504ca47c4687680c11d7a7192, type: 2}
