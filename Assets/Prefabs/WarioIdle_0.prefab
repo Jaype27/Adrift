@@ -23,15 +23,15 @@ GameObject:
   - component: {fileID: 95273937626241246}
   - component: {fileID: 54341139958021926}
   - component: {fileID: 65479228055733774}
-  - component: {fileID: 114119728011724328}
   - component: {fileID: 65388716497492530}
+  - component: {fileID: 114119728011724328}
   m_Layer: 0
-  m_Name: Player
+  m_Name: WarioIdle_0
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4999311211599824
 Transform:
   m_ObjectHideFlags: 1
@@ -39,8 +39,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1975074419694374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.32, y: 1.67, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalPosition: {x: -1, y: 1.5, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -70,8 +70,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.29, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.24, y: 0.47765273, z: 0.2}
+  m_Center: {x: 0, y: 0.0012865862, z: 0}
 --- !u!65 &65479228055733774
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -82,8 +82,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.24, y: 0.2898048, z: 0.2}
-  m_Center: {x: 0, y: 0.000000011920929, z: 0}
+  m_Size: {x: 0.24, y: 0.47765273, z: 0.2}
+  m_Center: {x: 0, y: 0.0012865862, z: 0}
 --- !u!95 &95273937626241246
 Animator:
   serializedVersion: 3
@@ -93,7 +93,7 @@ Animator:
   m_GameObject: {fileID: 1975074419694374}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 32e5e7a23c9db954a81256c717981ef3, type: 2}
+  m_Controller: {fileID: 9100000, guid: 28dc3419993c9304c8c2df4c503937f4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_currentOxygen: 30
   winSprite: {fileID: 0}
   theRaft: {fileID: 0}
-  pointsToAdd: 0
+  pointsToAdd: 5000
   actionSounds:
   - {fileID: 0}
   - {fileID: 0}
@@ -161,7 +161,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0c0fbbec09d9c31439f575fdb9c559fb, type: 3}
+  m_Sprite: {fileID: 21300012, guid: 48317dd45f50dc648ab0d83540053a87, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

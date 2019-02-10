@@ -13,6 +13,7 @@ public class PlayerControl : MonoBehaviour {
 
 	public float m_movement = 0f;
 	public float m_jump = 0f;
+	private float _moveInput;
 	public Slider oxygenMeter;
 	public float m_maxOxygen = 20f;
 	public GameObject m_oxygenUI;
@@ -40,16 +41,22 @@ public class PlayerControl : MonoBehaviour {
 
 		anim = GetComponent<Animator>();
 	}
+
+	void FixedUpdate() {
+		_moveInput = Input.GetAxisRaw("Horizontal");
+		m_rb.velocity = new Vector2(_moveInput * m_movement, m_rb.velocity.y);
+	}
 	
 	void Update () {
-		
-		if(Input.GetAxis("Horizontal") != 0) {
-			Vector3 pos = gameObject.transform.position;
-			pos.x += Input.GetAxis("Horizontal") * m_movement * Time.deltaTime;
-			gameObject.transform.position = pos;
 
-			float move = Input.GetAxis ("Horizontal");
-			anim.SetFloat("Speed", move);
+		if(_moveInput > 0) {
+			transform.eulerAngles = new Vector3(0, 0, 0);
+			anim.SetFloat("Speed", m_movement);
+		} else if(_moveInput < 0) {
+			transform.eulerAngles = new Vector3(0, 180, 0);
+			anim.SetFloat("Speed", m_movement);
+		} else {
+			anim.SetFloat("Speed", 0);
 		}
 
 		if(Input.GetButtonDown("Jump") && m_isWater) {
@@ -74,8 +81,9 @@ public class PlayerControl : MonoBehaviour {
 			m_currentOxygen -= Time.deltaTime;
 			oxygenMeter.value = m_currentOxygen/m_maxOxygen;
 			
-			bool inWater = m_isWater;
-			anim.SetBool("IntheWater", inWater);
+			anim.SetBool("IntheWater", true);
+		} else {
+			anim.SetBool("IntheWater", false);
 		}
 
 		if(m_currentOxygen <= 0) {
