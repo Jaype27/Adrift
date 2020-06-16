@@ -47,8 +47,8 @@ public class GameManager : MonoBehaviour {
 		m_lives = 3f;
 
 		m_highscore = PlayerPrefs.GetFloat("Highscore");
+		SpawnObjects();
 
-		StartCoroutine(FirstSpawn());
 		StartCoroutine(SpawnWaves());
 	}
 	
@@ -72,18 +72,18 @@ public class GameManager : MonoBehaviour {
 	public void PlayerDeath (PlayerControl player) {
 		thePlayer.gameObject.SetActive(false);
 	}
+
+	private void ResetStats(){
+		m_score = 0f;
+		m_lives = 3f;
+	}
 	
 	public void Respawn () {
 		
 		StartCoroutine(Retry());
 	}
-	
-	public IEnumerator FirstSpawn () {
-		yield return new WaitForSeconds(1f);
 
-			m_score = 0;
-			m_lives = 3;
-
+	private void SpawnObjects() {
 			thePlayer.transform.position = spawnPoint.transform.position;
 			thePlayer.gameObject.SetActive(true);
 			
@@ -107,23 +107,7 @@ public class GameManager : MonoBehaviour {
 		
 		if(m_lives >= 1) {
 			yield return new WaitForSeconds(2f);
-			thePlayer.transform.position = spawnPoint.transform.position;
-			thePlayer.gameObject.SetActive(true);
-			
-			itemList[0].transform.position = itemSpawn[0].transform.position;
-			itemList[0].gameObject.SetActive(true);
-			
-			itemList[1].transform.position = itemSpawn[1].transform.position;
-			itemList[1].gameObject.SetActive(true);
-			
-			itemList[2].transform.position = itemSpawn[2].transform.position;
-			itemList[2].gameObject.SetActive(true);
-			
-			itemList[3].transform.position = itemSpawn[3].transform.position;
-			itemList[3].gameObject.SetActive(true);
-			
-			itemList[4].transform.position = itemSpawn[4].transform.position;
-			itemList[4].gameObject.SetActive(true);
+			SpawnObjects();
 
 			thePlayer.m_currentOxygen = thePlayer.m_maxOxygen;
 			
@@ -131,7 +115,8 @@ public class GameManager : MonoBehaviour {
 			
 			gameOver.gameObject.SetActive(true);
 			
-			StartCoroutine(FirstSpawn());
+			SpawnObjects();
+			ResetStats();
 		}		
 	}
 	

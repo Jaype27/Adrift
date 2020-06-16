@@ -9,7 +9,7 @@ public class GameOver : MonoBehaviour {
 	public GameObject gameOver;
 
 	public void RetryGame () {
-		m_gm.FirstSpawn();
+		m_gm.Respawn();
 		gameOver.gameObject.SetActive(false);
 
 		
